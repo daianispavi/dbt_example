@@ -1,0 +1,12 @@
+dbt_example:  
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: 'wide-academy-468611-r1'
+      dataset:  "{{ env_var( 'DBT_DBNAME', 'dbt_dw') }}"
+      threads: 4
+      keyfile: C:\Users\daian\.dbt\wide-academy-468611-r1-014bd84250f3.json
+      
+  target: dev
